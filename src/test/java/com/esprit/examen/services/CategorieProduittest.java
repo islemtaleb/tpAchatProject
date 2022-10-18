@@ -16,11 +16,11 @@ import com.esprit.examen.repositories.CategorieProduitRepository;
 @RunWith(SpringRunner.class)
 public class CategorieProduittest {
 	@Autowired
-	CategorieProduitRepository cp;
+	CategorieProduitRepository  cp;
 	@Test
 	public void add() {
 		
-		CategorieProduit c=CategorieProduit.builder().codeCategorie("123").libelleCategorie("libelle").build();
+		CategorieProduit c =CategorieProduit.builder().codeCategorie("123").libelleCategorie("libelle").build();
 		CategorieProduit c2=cp.save(c);
 		assertEquals(c.getIdCategorieProduit(), c2.getIdCategorieProduit());
 		cp.delete(c2);
