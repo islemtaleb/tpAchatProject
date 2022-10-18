@@ -1,11 +1,16 @@
 package com.esprit.examen.services;
 
 import java.util.ArrayList;
+import
 import java.util.List;
+import java.util.Optional;
 
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -15,6 +20,7 @@ import com.esprit.examen.repositories.CategorieProduitRepository;
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class CategorieProduitMock {
+	
 	
 @Mock
 CategorieProduitRepository cp;
@@ -29,6 +35,14 @@ CategorieProduit c=CategorieProduit.builder().codeCategorie("123").libelleCatego
 		  add(CategorieProduit.builder().codeCategorie("12345").libelleCategorie("libelle2").build());
 		  
   }
+	  @Test 
+	  public void retreiveCategorieProduitTest() {
+		  Mockito.when (cp.findById(Mockito.anyLong())).thenReturn(Optional.of(c));
+		  
+		  CategorieProduit   categorieProduit=cp2.retrieveCategorieProduit(2);
+		  Assertions.assertNOTNULL(categorieProduit);
+		  
+	  }
 	  
   
 };}
