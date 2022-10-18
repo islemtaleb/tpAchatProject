@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/*package com.esprit.examen.services;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -27,5 +27,6 @@ public class CategorieProduittest {
 	}
 	
 	}
+	*/
 
 
