@@ -1,7 +1,13 @@
 package com.esprit.examen.services;
 
 import java.util.ArrayList;
-import
+
+
+
+import static org.junit.Assert.assertNotNull;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +22,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.esprit.examen.entities.CategorieProduit;
 import com.esprit.examen.repositories.CategorieProduitRepository;
+
+
+
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
@@ -35,14 +44,18 @@ CategorieProduit c=CategorieProduit.builder().codeCategorie("123").libelleCatego
 		  add(CategorieProduit.builder().codeCategorie("12345").libelleCategorie("libelle2").build());
 		  
   }
+	
+		  
+	  
+	  
 	  @Test 
 	  public void retreiveCategorieProduitTest() {
 		  Mockito.when (cp.findById(Mockito.anyLong())).thenReturn(Optional.of(c));
 		  
-		  CategorieProduit   categorieProduit=cp2.retrieveCategorieProduit(2);
-		  Assertions.assertNOTNULL(categorieProduit);
+		  CategorieProduit   categorieProduit=cp2.retrieveCategorieProduit((long)2);
+		 assertNotNull(categorieProduit);
+		 
 		  
 	  }
-	  
   
 };}
