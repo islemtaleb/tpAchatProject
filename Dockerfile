@@ -1,8 +1,6 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-RUN apk --no-cache add curl
-RUN curl -u admin:nexus -o achat-1.1.jar " http://192.168.1.20:8081/repository/maven-releases/com/esprit/examen/tpAchatProject/1.1/tpAchatProject-1.1.jar" -L
-ENTRYPOINT ["java","-jar","/achat-1.1.jar"]
+From openjdk:8
 EXPOSE 8089
+ADD target/tpAchatProject-1.1.jar tpAchatProject-1.1.jar
+ENTRYPOINT ["java", "-jar", "/tpAchatProject-1.1.jar"]
 
-	
+		
