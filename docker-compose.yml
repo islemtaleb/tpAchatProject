@@ -12,7 +12,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3309/tpachatproject?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
       MYSQL_DATABASE: tpachatproject
-       MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
 
 
   spring_app:
