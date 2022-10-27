@@ -11,8 +11,7 @@ services:
       - 3308:3309
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3309/tpachatproject?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
-
-       MYSQL_DATABASE: tpachatproject
+      MYSQL_DATABASE: tpachatproject
        MYSQL_ALLOW_EMPTY_PASSWORD: 1
 
 
@@ -24,5 +23,7 @@ services:
       - 8089:8089
     restart: always
     container_name: spring_app
+    environment:
+    -SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3309/tpachatproject?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
 volumes:
   mysql_container: { }
