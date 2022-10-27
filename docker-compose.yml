@@ -24,6 +24,6 @@ services:
     restart: always
     container_name: spring_app
     environment:
-    -SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3309/tpachatproject?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+     -SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3309/tpachatproject?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
 volumes:
   mysql_container: { }
